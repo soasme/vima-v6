@@ -1,14 +1,14 @@
-import { AbsoluteFill, interpolate, spring, useVideoConfig, Img, staticFile } from "remotion";
+import { AbsoluteFill, interpolate, useVideoConfig, Img, staticFile, useCurrentFrame } from "remotion";
 import { ObjectPageProps } from "./types";
 
-export const MysteriousObjectPage: React.FC<ObjectPageProps> = ({
-  frame,
-  duration,
+export const MysteriousObjectPage: React.FC<Omit<ObjectPageProps, 'frame' | 'duration'>> = ({
   background = "white",
   objects,
   text,
 }) => {
-  const { fps } = useVideoConfig();
+  const frame = useCurrentFrame();
+  const { fps, durationInFrames } = useVideoConfig();
+  const duration = durationInFrames; // Use the sequence duration
 
   // Slide-in from bottom (0.5 seconds)
   const slideInDuration = fps * 0.5; // 0.5 seconds
@@ -22,6 +22,21 @@ export const MysteriousObjectPage: React.FC<ObjectPageProps> = ({
       easing: (t: number) => 1 - (1 - t) * (1 - t), // ease out
     }
   );
+
+  // Scale animation (starts immediately)
+  const scaleProgress = interpolate(
+    frame,
+    [0, duration],
+    [0, 1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+      easing: (t: number) => 1 - (1 - t) * (1 - t), // ease out
+    }
+  );
+  
+  // Scale from 0.7 to 1.2 over the duration
+  const currentScale = interpolate(scaleProgress, [0, 1], [0.7, 1.2]);
 
   // Beat animation (starts after slide-in)
   const beatStartFrame = slideInDuration;
@@ -105,7 +120,7 @@ export const MysteriousObjectPage: React.FC<ObjectPageProps> = ({
             position: "absolute",
             top: "50%",
             left: "50%",
-            transform: `translate(-50%, -50%) translateY(${slideInY + beatOffsetY}px)`,
+            transform: `translate(-50%, -50%) translateY(${slideInY + beatOffsetY}px) scale(${currentScale})`,
           }}
         >
           {object.endsWith('.png') || object.endsWith('.jpg') || object.endsWith('.jpeg') ? (

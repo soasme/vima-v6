@@ -7,6 +7,7 @@ import { FingerPageComposition, fingerPageSchema } from "./FingerFamily/FingerPa
 import { ObjectPageComposition, objectPageSchema } from "./FingerFamily/ObjectPageComposition";
 import { MysteriousObjectPageComposition, mysteriousObjectPageSchema } from "./FingerFamily/MysteriousObjectPageComposition";
 import { MysteriousRevealComposition, mysteriousRevealSchema } from "./FingerFamily/MysteriousRevealComposition";
+import { BurstStar, burstStarSchema } from "./Effects/BurstStar";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -117,6 +118,20 @@ export const RemotionRoot: React.FC = () => {
           objects: ["cat.png"],
           text: "",
           background: "demoBg.png"
+        }}
+      />
+
+      <Composition
+        id="BurstStar"
+        component={BurstStar}
+        durationInFrames={30}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={burstStarSchema}
+        defaultProps={{
+          x: 960,
+          y: 540
         }}
       />
 

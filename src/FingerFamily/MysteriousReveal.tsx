@@ -1,14 +1,14 @@
-import { AbsoluteFill, interpolate, spring, useVideoConfig, Img, staticFile } from "remotion";
+import { AbsoluteFill, interpolate, spring, useVideoConfig, Img, staticFile, useCurrentFrame } from "remotion";
 import { ObjectPageProps } from "./types";
 
-export const MysteriousReveal: React.FC<ObjectPageProps> = ({
-  frame,
-  duration,
+export const MysteriousReveal: React.FC<Omit<ObjectPageProps, 'frame' | 'duration'>> = ({
   background = "white",
   objects,
   text,
 }) => {
-  const { fps } = useVideoConfig();
+  const frame = useCurrentFrame();
+  const { fps, durationInFrames } = useVideoConfig();
+  const duration = durationInFrames; // Use the sequence duration
 
   const slideProgress = spring({
     frame,
@@ -50,8 +50,8 @@ export const MysteriousReveal: React.FC<ObjectPageProps> = ({
     },
   }) : 0;
   
-  // Scale from 1.0 to 1.5x during the spring animation
-  const currentScale = interpolate(scaleProgress, [0, 1], [1.0, 1.5]);
+  // Scale from 1.2 to 2.0x during the spring animation (bigger scaling)
+  const currentScale = interpolate(scaleProgress, [0, 1], [1.2, 2.0]);
 
   const isBackgroundImage = background?.endsWith('.png') || background?.endsWith('.jpg') || background?.endsWith('.jpeg');
 

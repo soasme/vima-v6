@@ -1,4 +1,4 @@
-import { useCurrentFrame, useVideoConfig, Audio } from "remotion";
+import { useVideoConfig, Audio, Sequence } from "remotion";
 import { z } from "zod";
 import { ObjectPage } from "./FingerFamily/ObjectPage";
 import { FingerPage } from "./FingerFamily/FingerPage";
@@ -47,90 +47,46 @@ export const FingerFamily: React.FC<FingerFamilyProps> = ({
   objects, 
   bgm
 }) => {
-  const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   // Generate 10 objects: thumb -> pinky, thumb -> pinky
   const fingers = ["thumb", "index", "middle", "ring", "pinky", "thumb", "index", "middle", "ring", "pinky"] as const;
   
-  // Calculate total frames based on absolute timing endpoints
-  let totalFrames = 0;
-  const objectFrameRanges: Array<{start: number, end: number, objectIndex: number}> = [];
+  // Calculate sequence timings for each object
+  let currentStartFrame = 0;
+  const sequences: Array<{
+    startFrame: number;
+    mysteriousFrames: number;
+    revealFrames: number;
+    fingerFrames: number;
+    objectIndex: number;
+    object: typeof objects[0];
+    finger: typeof fingers[0];
+  }> = [];
   
   for (let i = 0; i < objects.length; i++) {
     const obj = objects[i];
+    const finger = fingers[i];
+    
+    const mysteriousEndsAtSeconds = parseTimingToSeconds(obj.mysteriousEndsAt);
+    const revealEndsAtSeconds = parseTimingToSeconds(obj.revealEndsAt);
     const fingerEndsAtSeconds = parseTimingToSeconds(obj.fingerEndsAt);
-    const objectTotalFrames = fingerEndsAtSeconds * fps;
     
-    objectFrameRanges.push({
-      start: totalFrames,
-      end: totalFrames + objectTotalFrames,
-      objectIndex: i
-    });
-    
-    totalFrames += objectTotalFrames;
-  }
-  
-  // Find which object we're currently in
-  const currentObjectRange = objectFrameRanges.find(range => 
-    frame >= range.start && frame < range.end
-  );
-  
-  if (!currentObjectRange) return null;
-  
-  const objectIndex = currentObjectRange.objectIndex;
-  const currentObject = objects[objectIndex];
-  const currentFinger = fingers[objectIndex];
-  const frameWithinObject = frame - currentObjectRange.start;
-  const timeWithinObject = frameWithinObject / fps;
-  
-  const mysteriousEndsAtSeconds = parseTimingToSeconds(currentObject.mysteriousEndsAt);
-  const revealEndsAtSeconds = parseTimingToSeconds(currentObject.revealEndsAt);
-  const fingerEndsAtSeconds = parseTimingToSeconds(currentObject.fingerEndsAt);
-  
-  // Render current page content
-  let currentPageContent;
-  
-  // Determine which page within the current object based on timing endpoints
-  if (timeWithinObject < mysteriousEndsAtSeconds) {
-    // MysteriousObjectPage
-    currentPageContent = (
-      <MysteriousObjectPage
-        frame={frameWithinObject}
-        duration={mysteriousEndsAtSeconds * fps}
-        background={currentObject.backgroundImage}
-        objects={[currentObject.objectImage]}
-        text=""
-      />
-    );
-  } else if (timeWithinObject < revealEndsAtSeconds) {
-    // MysteriousReveal
-    const mysteriousFrames = mysteriousEndsAtSeconds * fps;
-    const revealDuration = (revealEndsAtSeconds - mysteriousEndsAtSeconds) * fps;
-    currentPageContent = (
-      <MysteriousReveal
-        frame={frameWithinObject - mysteriousFrames}
-        duration={revealDuration}
-        background={currentObject.backgroundImage}
-        objects={[currentObject.objectImage]}
-        text=""
-      />
-    );
-  } else {
-    // FingerPage
     const mysteriousFrames = mysteriousEndsAtSeconds * fps;
     const revealFrames = (revealEndsAtSeconds - mysteriousEndsAtSeconds) * fps;
-    const fingerDuration = (fingerEndsAtSeconds - revealEndsAtSeconds) * fps;
-    currentPageContent = (
-      <FingerPage
-        frame={frameWithinObject - mysteriousFrames - revealFrames}
-        duration={fingerDuration}
-        background={currentObject.backgroundImage}
-        finger={currentFinger}
-        objects={[currentObject.objectImage]}
-        text=""
-      />
-    );
+    const fingerFrames = (fingerEndsAtSeconds - revealEndsAtSeconds) * fps;
+    
+    sequences.push({
+      startFrame: currentStartFrame,
+      mysteriousFrames,
+      revealFrames,
+      fingerFrames,
+      objectIndex: i,
+      object: obj,
+      finger
+    });
+    
+    currentStartFrame += fingerEndsAtSeconds * fps;
   }
 
   return (
@@ -142,7 +98,47 @@ export const FingerFamily: React.FC<FingerFamilyProps> = ({
           startFrom={0}
         />
       )}
-      {currentPageContent}
+      
+      {sequences.map((seq) => (
+        <div key={seq.objectIndex}>
+          {/* MysteriousObjectPage */}
+          <Sequence
+            from={seq.startFrame}
+            durationInFrames={seq.mysteriousFrames}
+          >
+            <MysteriousObjectPage
+              background={seq.object.backgroundImage}
+              objects={[seq.object.objectImage]}
+              text=""
+            />
+          </Sequence>
+          
+          {/* MysteriousReveal */}
+          <Sequence
+            from={seq.startFrame + seq.mysteriousFrames}
+            durationInFrames={seq.revealFrames}
+          >
+            <MysteriousReveal
+              background={seq.object.backgroundImage}
+              objects={[seq.object.objectImage]}
+              text=""
+            />
+          </Sequence>
+          
+          {/* FingerPage */}
+          <Sequence
+            from={seq.startFrame + seq.mysteriousFrames + seq.revealFrames}
+            durationInFrames={seq.fingerFrames}
+          >
+            <FingerPage
+              background={seq.object.backgroundImage}
+              finger={seq.finger}
+              objects={[seq.object.objectImage]}
+              text=""
+            />
+          </Sequence>
+        </div>
+      ))}
     </>
   );
 };

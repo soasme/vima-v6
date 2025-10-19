@@ -1,14 +1,14 @@
-import { AbsoluteFill, interpolate, spring, useVideoConfig, Img, staticFile } from "remotion";
+import { AbsoluteFill, interpolate, spring, useVideoConfig, Img, staticFile, useCurrentFrame } from "remotion";
 import { FingerPageProps } from "./types";
+import { BurstStar } from "../Effects/BurstStar";
 
-export const FingerPage: React.FC<FingerPageProps> = ({
-  frame,
-  duration,
+export const FingerPage: React.FC<Omit<FingerPageProps, 'frame' | 'duration'>> = ({
   background = "white",
   finger,
   objects = [],
   text,
 }) => {
+  const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   const slideProgress = spring({
@@ -106,6 +106,7 @@ export const FingerPage: React.FC<FingerPageProps> = ({
     [0, 1],
     [screenCenterY, fingerY + currentHandTop - baseHandTop] // Adjust for hand position
   );
+
 
   const isBackgroundImage = background?.endsWith('.png') || background?.endsWith('.jpg') || background?.endsWith('.jpeg');
 
@@ -232,6 +233,30 @@ export const FingerPage: React.FC<FingerPageProps> = ({
         }
       })}
 
+
+      {/* Star particle effect at joint point during joint moment */}
+      {objects.map((object, index) => {
+        // Show burst for 30 frames starting from introAnimationDuration
+        if (frame >= introAnimationDuration && frame < introAnimationDuration + 30) {
+          // Calculate exact joint position (finger position) when joint happens
+          const handCenterX = 55 + 960;
+          const handCenterY = currentHandTop + 1648;
+          
+          const radians = (handRotation * Math.PI) / 180;
+          const relativeFingerX = fingerX - 960;
+          const relativeFingerY = fingerY - 1648;
+          
+          const rotatedFingerX = relativeFingerX * Math.cos(radians) - relativeFingerY * Math.sin(radians);
+          const rotatedFingerY = relativeFingerX * Math.sin(radians) + relativeFingerY * Math.cos(radians);
+          
+          // Burst position is exactly at the joint point (finger position)
+          const burstX = handCenterX + rotatedFingerX;
+          const burstY = handCenterY + rotatedFingerY;
+
+          return <BurstStar key={`particle-${index}`} x={burstX} y={burstY} />;
+        }
+        return null;
+      })}
 
       {/* Text overlay */}
       {text && (
