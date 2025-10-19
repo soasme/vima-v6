@@ -2,12 +2,13 @@ import "./index.css";
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
-import { FingerFamily, fingerFamilySchema } from "./FingerFamily";
+import { FingerFamily, fingerFamilySchema, calculateMetadata } from "./FingerFamily";
 import { FingerPageComposition, fingerPageSchema } from "./FingerFamily/FingerPageComposition";
 import { ObjectPageComposition, objectPageSchema } from "./FingerFamily/ObjectPageComposition";
 import { MysteriousObjectPageComposition, mysteriousObjectPageSchema } from "./FingerFamily/MysteriousObjectPageComposition";
 import { MysteriousRevealComposition, mysteriousRevealSchema } from "./FingerFamily/MysteriousRevealComposition";
 import { BurstStar, burstStarSchema } from "./Effects/BurstStar";
+import { Entro, entroSchema } from "./Common/Entro";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -52,23 +53,23 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="FingerFamily"
         component={FingerFamily}
-        durationInFrames={1800}
+        calculateMetadata={calculateMetadata}
         fps={30}
         width={1920}
         height={1080}
         schema={fingerFamilySchema}
         defaultProps={{
           objects: [
-            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousEndsAt: "00:02.00", revealEndsAt: "00:04.00", fingerEndsAt: "00:06.00" }, // Object 1 - thumb
-            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousEndsAt: "00:02.00", revealEndsAt: "00:04.00", fingerEndsAt: "00:06.00" }, // Object 2 - index
-            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousEndsAt: "00:02.00", revealEndsAt: "00:04.00", fingerEndsAt: "00:06.00" }, // Object 3 - middle
-            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousEndsAt: "00:02.00", revealEndsAt: "00:04.00", fingerEndsAt: "00:06.00" }, // Object 4 - ring
-            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousEndsAt: "00:02.00", revealEndsAt: "00:04.00", fingerEndsAt: "00:06.00" }, // Object 5 - pinky
-            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousEndsAt: "00:02.00", revealEndsAt: "00:04.00", fingerEndsAt: "00:06.00" }, // Object 6 - thumb
-            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousEndsAt: "00:02.00", revealEndsAt: "00:04.00", fingerEndsAt: "00:06.00" }, // Object 7 - index
-            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousEndsAt: "00:02.00", revealEndsAt: "00:04.00", fingerEndsAt: "00:06.00" }, // Object 8 - middle
-            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousEndsAt: "00:02.00", revealEndsAt: "00:04.00", fingerEndsAt: "00:06.00" }, // Object 9 - ring
-            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousEndsAt: "00:02.00", revealEndsAt: "00:04.00", fingerEndsAt: "00:06.00" }  // Object 10 - pinky
+            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2.04, revealDuration: 2.50, fingerDuration: 1.46 }, // Object 1 - thumb (2.040s + 2.500s + 1.460s = 6s)
+            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }, // Object 2 - index
+            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }, // Object 3 - middle
+            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }, // Object 4 - ring
+            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }, // Object 5 - pinky
+            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }, // Object 6 - thumb
+            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }, // Object 7 - index
+            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }, // Object 8 - middle
+            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }, // Object 9 - ring
+            { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }  // Object 10 - pinky
           ],
           bgm: "https://cdn1.suno.ai/31d5ebf2-2686-4ecc-9cd6-458067461c9e.mp3"
         }}
@@ -132,6 +133,19 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           x: 960,
           y: 540
+        }}
+      />
+
+      <Composition
+        id="Entro"
+        component={Entro}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={entroSchema}
+        defaultProps={{
+          duration: 5
         }}
       />
 

@@ -4,43 +4,71 @@ import { ObjectPage } from "./FingerFamily/ObjectPage";
 import { FingerPage } from "./FingerFamily/FingerPage";
 import { MysteriousObjectPage } from "./FingerFamily/MysteriousObjectPage";
 import { MysteriousReveal } from "./FingerFamily/MysteriousReveal";
+import { Entro } from "./Common/Entro";
 
 export const fingerFamilySchema = z.object({
   objects: z.array(z.object({
     objectImage: z.string(),
     backgroundImage: z.string(),
-    mysteriousEndsAt: z.string(),
-    revealEndsAt: z.string(),
-    fingerEndsAt: z.string(),
+    mysteriousDuration: z.number(),
+    revealDuration: z.number(),
+    fingerDuration: z.number(),
   })).length(10),
   bgm: z.string().optional(),
 });
 
 type FingerFamilyProps = z.infer<typeof fingerFamilySchema>;
 
-// Parse timing string (e.g., "00:07.11") to seconds
-const parseTimingToSeconds = (timing: string): number => {
-  if (!timing) {
-    return 0;
+// Parse time where decimal part represents milliseconds (e.g., 4.04 = 4 seconds + 40 milliseconds = 4.040 seconds)
+const parseTime = (time: number): number => {
+  // Convert to string to parse the decimal part
+  const timeStr = time.toString();
+  const parts = timeStr.split('.');
+  
+  if (parts.length === 1) {
+    // No decimal part, just seconds
+    return time;
   }
   
-  // Parse format like "00:07.11" (MM:SS.FF)
-  const match = timing.match(/^(\d{2}):(\d{2})\.(\d{2})$/);
-  if (match) {
-    const [, minutes, seconds, centiseconds] = match;
-    return parseInt(minutes) * 60 + parseInt(seconds) + parseInt(centiseconds) / 100;
+  if (parts.length === 2) {
+    const seconds = parseInt(parts[0]);
+    const decimalPart = parts[1];
+    
+    // Interpret decimal part as milliseconds (pad to 3 digits)
+    const millisecondsPart = decimalPart.padEnd(3, '0').substring(0, 3);
+    const milliseconds = parseInt(millisecondsPart);
+    
+    return seconds + milliseconds / 1000;
   }
   
-  // Parse format like "07.11" (SS.FF)
-  const simpleMatch = timing.match(/^(\d+)\.(\d{2})$/);
-  if (simpleMatch) {
-    const [, seconds, centiseconds] = simpleMatch;
-    return parseInt(seconds) + parseInt(centiseconds) / 100;
-  }
+  // Fallback to original value
+  return time;
+};
+
+
+export const calculateMetadata = ({ props }: { props: FingerFamilyProps }) => {
+  const fps = 30;
+
+  // Calculate total duration from all objects using simple durations
+  let totalSeconds = 0;
   
-  // Parse simple seconds as string
-  const parsed = parseFloat(timing);
-  return isNaN(parsed) ? 0 : parsed;
+  for (const obj of props.objects) {
+    // Parse each duration and sum them
+    const mysteriousDuration = parseTime(obj.mysteriousDuration);
+    const revealDuration = parseTime(obj.revealDuration);
+    const fingerDuration = parseTime(obj.fingerDuration);
+    
+    const objectTotalDuration = mysteriousDuration + revealDuration + fingerDuration;
+    totalSeconds += objectTotalDuration;
+  }
+
+  // Add Entro duration (5 seconds)
+  const entroDuration = 5;
+  
+  const totalDurationSeconds = totalSeconds + entroDuration;
+  const durationInFrames = Math.ceil(totalDurationSeconds * fps);
+  
+  return { durationInFrames, fps };
 };
 
 export const FingerFamily: React.FC<FingerFamilyProps> = ({ 
@@ -68,13 +96,10 @@ export const FingerFamily: React.FC<FingerFamilyProps> = ({
     const obj = objects[i];
     const finger = fingers[i];
     
-    const mysteriousEndsAtSeconds = parseTimingToSeconds(obj.mysteriousEndsAt);
-    const revealEndsAtSeconds = parseTimingToSeconds(obj.revealEndsAt);
-    const fingerEndsAtSeconds = parseTimingToSeconds(obj.fingerEndsAt);
-    
-    const mysteriousFrames = mysteriousEndsAtSeconds * fps;
-    const revealFrames = (revealEndsAtSeconds - mysteriousEndsAtSeconds) * fps;
-    const fingerFrames = (fingerEndsAtSeconds - revealEndsAtSeconds) * fps;
+    // Parse and convert durations to frames
+    const mysteriousFrames = parseTime(obj.mysteriousDuration) * fps;
+    const revealFrames = parseTime(obj.revealDuration) * fps;
+    const fingerFrames = parseTime(obj.fingerDuration) * fps;
     
     sequences.push({
       startFrame: currentStartFrame,
@@ -86,8 +111,13 @@ export const FingerFamily: React.FC<FingerFamilyProps> = ({
       finger
     });
     
-    currentStartFrame += fingerEndsAtSeconds * fps;
+    // Move to next sequence start frame
+    currentStartFrame += mysteriousFrames + revealFrames + fingerFrames;
   }
+
+  // Calculate total duration and add Entro at the end
+  const totalFingerFamilyFrames = currentStartFrame;
+  const entroFrames = 5 * fps; // 5 seconds for Entro
 
   return (
     <>
@@ -99,7 +129,7 @@ export const FingerFamily: React.FC<FingerFamilyProps> = ({
         />
       )}
       
-      {sequences.map((seq) => (
+      {sequences.map((seq, index) => (
         <div key={seq.objectIndex}>
           {/* MysteriousObjectPage */}
           <Sequence
@@ -139,6 +169,14 @@ export const FingerFamily: React.FC<FingerFamilyProps> = ({
           </Sequence>
         </div>
       ))}
+      
+      {/* Entro at the end */}
+      <Sequence
+        from={totalFingerFamilyFrames}
+        durationInFrames={entroFrames}
+      >
+        <Entro duration={5} />
+      </Sequence>
     </>
   );
 };
