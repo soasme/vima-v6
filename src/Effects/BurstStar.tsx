@@ -6,9 +6,9 @@ export const burstStarSchema = z.object({
   y: z.number(),
 });
 
-type BurstStarProps = z.infer<typeof burstStarSchema>;
+type BurstStarEffectProps = z.infer<typeof burstStarSchema>;
 
-export const BurstStar: React.FC<BurstStarProps> = ({ x, y }) => {
+export const BurstStarEffect: React.FC<BurstStarEffectProps> = ({ x, y }) => {
   const frame = useCurrentFrame();
   
   return (

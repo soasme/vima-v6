@@ -1,6 +1,6 @@
 import { useCurrentFrame, useVideoConfig } from "remotion";
 import { z } from "zod";
-import { MysteriousReveal } from "./MysteriousReveal";
+import { MysteriousRevealPage } from "./MysteriousReveal";
 
 export const mysteriousRevealSchema = z.object({
   objects: z.array(z.string()),
@@ -19,7 +19,7 @@ export const MysteriousRevealComposition: React.FC<MysteriousRevealCompositionPr
   const { durationInFrames } = useVideoConfig();
 
   return (
-    <MysteriousReveal
+    <MysteriousRevealPage
       frame={frame}
       duration={durationInFrames}
       background={background}

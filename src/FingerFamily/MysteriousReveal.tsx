@@ -1,7 +1,7 @@
 import { AbsoluteFill, interpolate, spring, useVideoConfig, Img, staticFile, useCurrentFrame } from "remotion";
 import { ObjectPageProps } from "./types";
 
-export const MysteriousReveal: React.FC<Omit<ObjectPageProps, 'frame' | 'duration'>> = ({
+export const MysteriousRevealPage: React.FC<Omit<ObjectPageProps, 'frame' | 'duration'>> = ({
   background = "white",
   objects,
   text,

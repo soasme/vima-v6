@@ -1,6 +1,6 @@
 import { AbsoluteFill, interpolate, spring, useVideoConfig, Img, staticFile, useCurrentFrame } from "remotion";
 import { FingerPageProps } from "./types";
-import { BurstStar } from "../Effects/BurstStar";
+import { BurstStarEffect } from "../Effects/BurstStar";
 
 export const FingerPage: React.FC<Omit<FingerPageProps, 'frame' | 'duration'>> = ({
   background = "white",
@@ -253,7 +253,7 @@ export const FingerPage: React.FC<Omit<FingerPageProps, 'frame' | 'duration'>> =
           const burstX = handCenterX + rotatedFingerX;
           const burstY = handCenterY + rotatedFingerY;
 
-          return <BurstStar key={`particle-${index}`} x={burstX} y={burstY} />;
+          return <BurstStarEffect key={`particle-${index}`} x={burstX} y={burstY} />;
         }
         return null;
       })}

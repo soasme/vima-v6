@@ -3,8 +3,8 @@ import { z } from "zod";
 import { ObjectPage } from "./FingerFamily/ObjectPage";
 import { FingerPage } from "./FingerFamily/FingerPage";
 import { MysteriousObjectPage } from "./FingerFamily/MysteriousObjectPage";
-import { MysteriousReveal } from "./FingerFamily/MysteriousReveal";
-import { Entro } from "./Common/Entro";
+import { MysteriousRevealPage } from "./FingerFamily/MysteriousReveal";
+import { EntroPage } from "./Common/Entro";
 
 export const fingerFamilySchema = z.object({
   objects: z.array(z.object({
@@ -148,7 +148,7 @@ export const FingerFamily: React.FC<FingerFamilyProps> = ({
             from={seq.startFrame + seq.mysteriousFrames}
             durationInFrames={seq.revealFrames}
           >
-            <MysteriousReveal
+            <MysteriousRevealPage
               background={seq.object.backgroundImage}
               objects={[seq.object.objectImage]}
               text=""
@@ -175,7 +175,7 @@ export const FingerFamily: React.FC<FingerFamilyProps> = ({
         from={totalFingerFamilyFrames}
         durationInFrames={entroFrames}
       >
-        <Entro duration={5} />
+        <EntroPage duration={5} />
       </Sequence>
     </>
   );

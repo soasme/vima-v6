@@ -5,9 +5,9 @@ export const entroSchema = z.object({
   duration: z.number().default(5),
 });
 
-type EntroProps = z.infer<typeof entroSchema>;
+type EntroPageProps = z.infer<typeof entroSchema>;
 
-export const Entro: React.FC<EntroProps> = ({ duration }) => {
+export const EntroPage: React.FC<EntroPageProps> = ({ duration }) => {
   const { fps } = useVideoConfig();
   const frame = useCurrentFrame();
   const durationInFrames = duration * fps;
