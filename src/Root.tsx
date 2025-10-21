@@ -7,6 +7,7 @@ import { MysteriousObjectPageComposition, mysteriousObjectPageSchema } from "./F
 import { MysteriousRevealComposition, mysteriousRevealSchema } from "./FingerFamily/MysteriousRevealComposition";
 import { BurstStarEffect, burstStarSchema } from "./Effects/BurstStar";
 import { EntroPage, entroSchema } from "./Common/Entro";
+import { JigsawPageComposition, jigsawPageSchema } from "./JigsawPage/JigsawPageComposition";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -111,6 +112,23 @@ export const RemotionRoot: React.FC = () => {
         schema={entroSchema}
         defaultProps={{
           duration: 5
+        }}
+      />
+
+      <Composition
+        id="JigsawPage"
+        component={JigsawPageComposition}
+        durationInFrames={240}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={jigsawPageSchema}
+        defaultProps={{
+          backgroundImage: "demoBg.png",
+          text: "Complete the puzzle!",
+          pieceRevealDuration: 30,
+          pieceFadeDuration: 15,
+          randomOrder: true
         }}
       />
 
