@@ -1,0 +1,1731 @@
+[
+  {
+    "text": "Tiger,",
+    "startMs": 430,
+    "endMs": 840,
+    "timestampMs": 960,
+    "confidence": 0.825481
+  },
+  {
+    "text": " tiger,",
+    "startMs": 840,
+    "endMs": 1660,
+    "timestampMs": 1600,
+    "confidence": 0.884396
+  },
+  {
+    "text": " where",
+    "startMs": 1660,
+    "endMs": 2260,
+    "timestampMs": 2100,
+    "confidence": 0.973381
+  },
+  {
+    "text": " are",
+    "startMs": 2260,
+    "endMs": 2620,
+    "timestampMs": 2480,
+    "confidence": 0.998803
+  },
+  {
+    "text": " you?",
+    "startMs": 2620,
+    "endMs": 3200,
+    "timestampMs": 2860,
+    "confidence": 0.999291
+  },
+  {
+    "text": " Here",
+    "startMs": 3200,
+    "endMs": 3470,
+    "timestampMs": 3340,
+    "confidence": 0.562315
+  },
+  {
+    "text": " I",
+    "startMs": 3470,
+    "endMs": 3530,
+    "timestampMs": 3540,
+    "confidence": 0.990618
+  },
+  {
+    "text": " am,",
+    "startMs": 3530,
+    "endMs": 3790,
+    "timestampMs": 3780,
+    "confidence": 0.99878
+  },
+  {
+    "text": " here",
+    "startMs": 3790,
+    "endMs": 4060,
+    "timestampMs": 4000,
+    "confidence": 0.980929
+  },
+  {
+    "text": " I",
+    "startMs": 4060,
+    "endMs": 4120,
+    "timestampMs": 4220,
+    "confidence": 0.996246
+  },
+  {
+    "text": " am.",
+    "startMs": 4120,
+    "endMs": 4400,
+    "timestampMs": 4420,
+    "confidence": 0.998452
+  },
+  {
+    "text": " I",
+    "startMs": 4400,
+    "endMs": 4490,
+    "timestampMs": 4560,
+    "confidence": 0.796905
+  },
+  {
+    "text": " am",
+    "startMs": 4490,
+    "endMs": 4670,
+    "timestampMs": 4720,
+    "confidence": 0.98441
+  },
+  {
+    "text": " a",
+    "startMs": 4670,
+    "endMs": 4760,
+    "timestampMs": 4920,
+    "confidence": 0.988821
+  },
+  {
+    "text": " tiger",
+    "startMs": 4760,
+    "endMs": 5220,
+    "timestampMs": 5100,
+    "confidence": 0.984823
+  },
+  {
+    "text": " too.",
+    "startMs": 5220,
+    "endMs": 5660,
+    "timestampMs": 5460,
+    "confidence": 0.764904
+  },
+  {
+    "text": " I",
+    "startMs": 5660,
+    "endMs": 5710,
+    "timestampMs": 5760,
+    "confidence": 0.498408
+  },
+  {
+    "text": " prowl",
+    "startMs": 5710,
+    "endMs": 6000,
+    "timestampMs": 6040,
+    "confidence": 0.969569
+  },
+  {
+    "text": " through",
+    "startMs": 6000,
+    "endMs": 6320,
+    "timestampMs": 6380,
+    "confidence": 0.942861
+  },
+  {
+    "text": " the",
+    "startMs": 6320,
+    "endMs": 6460,
+    "timestampMs": 6580,
+    "confidence": 0.967388
+  },
+  {
+    "text": " jungle,",
+    "startMs": 6460,
+    "endMs": 7000,
+    "timestampMs": 6920,
+    "confidence": 0.891535
+  },
+  {
+    "text": " fierce",
+    "startMs": 7000,
+    "endMs": 8380,
+    "timestampMs": 7540,
+    "confidence": 0.96342
+  },
+  {
+    "text": " and",
+    "startMs": 8380,
+    "endMs": 9070,
+    "timestampMs": 8340,
+    "confidence": 0.992214
+  },
+  {
+    "text": " true.",
+    "startMs": 9070,
+    "endMs": 10000,
+    "timestampMs": 9420,
+    "confidence": 0.996818
+  },
+  {
+    "text": " Monkey,",
+    "startMs": 10000,
+    "endMs": 11120,
+    "timestampMs": 11680,
+    "confidence": 0.978402
+  },
+  {
+    "text": " monkey,",
+    "startMs": 11120,
+    "endMs": 11620,
+    "timestampMs": 12320,
+    "confidence": 0.98277
+  },
+  {
+    "text": " where",
+    "startMs": 11620,
+    "endMs": 12130,
+    "timestampMs": 12780,
+    "confidence": 0.997657
+  },
+  {
+    "text": " are",
+    "startMs": 12130,
+    "endMs": 12430,
+    "timestampMs": 13180,
+    "confidence": 0.99958
+  },
+  {
+    "text": " you?",
+    "startMs": 12430,
+    "endMs": 13030,
+    "timestampMs": 13600,
+    "confidence": 0.999767
+  },
+  {
+    "text": " Here",
+    "startMs": 13030,
+    "endMs": 13430,
+    "timestampMs": 14040,
+    "confidence": 0.993178
+  },
+  {
+    "text": " I",
+    "startMs": 13430,
+    "endMs": 13530,
+    "timestampMs": 14240,
+    "confidence": 0.998239
+  },
+  {
+    "text": " am,",
+    "startMs": 13530,
+    "endMs": 13930,
+    "timestampMs": 14460,
+    "confidence": 0.999737
+  },
+  {
+    "text": " here",
+    "startMs": 13930,
+    "endMs": 14330,
+    "timestampMs": 14700,
+    "confidence": 0.996489
+  },
+  {
+    "text": " I",
+    "startMs": 14330,
+    "endMs": 14430,
+    "timestampMs": 14880,
+    "confidence": 0.999386
+  },
+  {
+    "text": " am.",
+    "startMs": 14430,
+    "endMs": 15000,
+    "timestampMs": 15020,
+    "confidence": 0.999275
+  },
+  {
+    "text": " I",
+    "startMs": 15000,
+    "endMs": 15040,
+    "timestampMs": 15180,
+    "confidence": 0.918411
+  },
+  {
+    "text": " swing",
+    "startMs": 15040,
+    "endMs": 15260,
+    "timestampMs": 15380,
+    "confidence": 0.996554
+  },
+  {
+    "text": " through",
+    "startMs": 15260,
+    "endMs": 15570,
+    "timestampMs": 15640,
+    "confidence": 0.989704
+  },
+  {
+    "text": " bamboo.",
+    "startMs": 15570,
+    "endMs": 16000,
+    "timestampMs": 16060,
+    "confidence": 0.995894
+  },
+  {
+    "text": " I",
+    "startMs": 16000,
+    "endMs": 16110,
+    "timestampMs": 16420,
+    "confidence": 0.938949
+  },
+  {
+    "text": " chatter",
+    "startMs": 16110,
+    "endMs": 16900,
+    "timestampMs": 16780,
+    "confidence": 0.993942
+  },
+  {
+    "text": " and",
+    "startMs": 16900,
+    "endMs": 17240,
+    "timestampMs": 17140,
+    "confidence": 0.981953
+  },
+  {
+    "text": " giggle",
+    "startMs": 17240,
+    "endMs": 17920,
+    "timestampMs": 17380,
+    "confidence": 0.996379
+  },
+  {
+    "text": " the",
+    "startMs": 17920,
+    "endMs": 18260,
+    "timestampMs": 17780,
+    "confidence": 0.994579
+  },
+  {
+    "text": " whole",
+    "startMs": 18260,
+    "endMs": 18830,
+    "timestampMs": 18360,
+    "confidence": 0.999245
+  },
+  {
+    "text": " day",
+    "startMs": 18830,
+    "endMs": 19170,
+    "timestampMs": 18960,
+    "confidence": 0.993604
+  },
+  {
+    "text": " through.",
+    "startMs": 19170,
+    "endMs": 20000,
+    "timestampMs": 20160,
+    "confidence": 0.996527
+  },
+  {
+    "text": " Elephant,",
+    "startMs": 21000,
+    "endMs": 21950,
+    "timestampMs": 22320,
+    "confidence": 0.982284
+  },
+  {
+    "text": " elephant,",
+    "startMs": 21950,
+    "endMs": 22900,
+    "timestampMs": 22980,
+    "confidence": 0.976192
+  },
+  {
+    "text": " where",
+    "startMs": 22900,
+    "endMs": 23380,
+    "timestampMs": 23420,
+    "confidence": 0.997402
+  },
+  {
+    "text": " are",
+    "startMs": 23380,
+    "endMs": 23660,
+    "timestampMs": 23800,
+    "confidence": 0.99947
+  },
+  {
+    "text": " you?",
+    "startMs": 23660,
+    "endMs": 24220,
+    "timestampMs": 24360,
+    "confidence": 0.999703
+  },
+  {
+    "text": " Here",
+    "startMs": 24220,
+    "endMs": 24600,
+    "timestampMs": 24680,
+    "confidence": 0.997219
+  },
+  {
+    "text": " I",
+    "startMs": 24600,
+    "endMs": 24690,
+    "timestampMs": 24900,
+    "confidence": 0.999249
+  },
+  {
+    "text": " am,",
+    "startMs": 24690,
+    "endMs": 25070,
+    "timestampMs": 25120,
+    "confidence": 0.999722
+  },
+  {
+    "text": " here",
+    "startMs": 25070,
+    "endMs": 25450,
+    "timestampMs": 25360,
+    "confidence": 0.998582
+  },
+  {
+    "text": " I",
+    "startMs": 25450,
+    "endMs": 25540,
+    "timestampMs": 25560,
+    "confidence": 0.999737
+  },
+  {
+    "text": " am.",
+    "startMs": 25540,
+    "endMs": 26010,
+    "timestampMs": 25700,
+    "confidence": 0.999752
+  },
+  {
+    "text": " I",
+    "startMs": 26010,
+    "endMs": 26100,
+    "timestampMs": 25800,
+    "confidence": 0.993995
+  },
+  {
+    "text": " trumpet",
+    "startMs": 26100,
+    "endMs": 26770,
+    "timestampMs": 26060,
+    "confidence": 0.955279
+  },
+  {
+    "text": " for",
+    "startMs": 26770,
+    "endMs": 27050,
+    "timestampMs": 26440,
+    "confidence": 0.998677
+  },
+  {
+    "text": " you.",
+    "startMs": 27050,
+    "endMs": 27610,
+    "timestampMs": 26740,
+    "confidence": 0.999173
+  },
+  {
+    "text": " My",
+    "startMs": 27610,
+    "endMs": 27800,
+    "timestampMs": 27080,
+    "confidence": 0.996535
+  },
+  {
+    "text": " big",
+    "startMs": 27800,
+    "endMs": 28080,
+    "timestampMs": 27360,
+    "confidence": 0.992456
+  },
+  {
+    "text": " long",
+    "startMs": 28080,
+    "endMs": 28460,
+    "timestampMs": 27700,
+    "confidence": 0.787602
+  },
+  {
+    "text": " trunk",
+    "startMs": 28460,
+    "endMs": 28940,
+    "timestampMs": 28060,
+    "confidence": 0.998216
+  },
+  {
+    "text": " can",
+    "startMs": 28940,
+    "endMs": 29220,
+    "timestampMs": 28380,
+    "confidence": 0.905509
+  },
+  {
+    "text": " splash",
+    "startMs": 29220,
+    "endMs": 29790,
+    "timestampMs": 28980,
+    "confidence": 0.998721
+  },
+  {
+    "text": " water",
+    "startMs": 29790,
+    "endMs": 30270,
+    "timestampMs": 29460,
+    "confidence": 0.993661
+  },
+  {
+    "text": " too.",
+    "startMs": 30270,
+    "endMs": 31000,
+    "timestampMs": 30820,
+    "confidence": 0.924986
+  },
+  {
+    "text": " Snake,",
+    "startMs": 31000,
+    "endMs": 31740,
+    "timestampMs": 32820,
+    "confidence": 0.994447
+  },
+  {
+    "text": " snake,",
+    "startMs": 31740,
+    "endMs": 32480,
+    "timestampMs": 33480,
+    "confidence": 0.99
+  },
+  {
+    "text": " where",
+    "startMs": 32480,
+    "endMs": 33000,
+    "timestampMs": 34120,
+    "confidence": 0.99875
+  },
+  {
+    "text": " are",
+    "startMs": 33000,
+    "endMs": 33320,
+    "timestampMs": 34460,
+    "confidence": 0.999703
+  },
+  {
+    "text": " you?",
+    "startMs": 33320,
+    "endMs": 33940,
+    "timestampMs": 34920,
+    "confidence": 0.999779
+  },
+  {
+    "text": " Here",
+    "startMs": 33940,
+    "endMs": 34360,
+    "timestampMs": 35340,
+    "confidence": 0.998609
+  },
+  {
+    "text": " I",
+    "startMs": 34360,
+    "endMs": 34460,
+    "timestampMs": 35580,
+    "confidence": 0.999508
+  },
+  {
+    "text": " am,",
+    "startMs": 34460,
+    "endMs": 34880,
+    "timestampMs": 35760,
+    "confidence": 0.999882
+  },
+  {
+    "text": " here",
+    "startMs": 34880,
+    "endMs": 35300,
+    "timestampMs": 36000,
+    "confidence": 0.998795
+  },
+  {
+    "text": " I",
+    "startMs": 35300,
+    "endMs": 35400,
+    "timestampMs": 36200,
+    "confidence": 0.999638
+  },
+  {
+    "text": " am.",
+    "startMs": 35400,
+    "endMs": 35920,
+    "timestampMs": 36360,
+    "confidence": 0.999798
+  },
+  {
+    "text": " I",
+    "startMs": 35920,
+    "endMs": 36020,
+    "timestampMs": 36500,
+    "confidence": 0.977776
+  },
+  {
+    "text": " hiss",
+    "startMs": 36020,
+    "endMs": 36430,
+    "timestampMs": 36660,
+    "confidence": 0.990163
+  },
+  {
+    "text": " and",
+    "startMs": 36430,
+    "endMs": 36740,
+    "timestampMs": 36820,
+    "confidence": 0.992975
+  },
+  {
+    "text": " slither",
+    "startMs": 36740,
+    "endMs": 37480,
+    "timestampMs": 37000,
+    "confidence": 0.992865
+  },
+  {
+    "text": " too.",
+    "startMs": 37480,
+    "endMs": 38100,
+    "timestampMs": 37440,
+    "confidence": 0.949146
+  },
+  {
+    "text": " I",
+    "startMs": 38100,
+    "endMs": 38200,
+    "timestampMs": 37740,
+    "confidence": 0.993758
+  },
+  {
+    "text": " hide",
+    "startMs": 38200,
+    "endMs": 38620,
+    "timestampMs": 38140,
+    "confidence": 0.99846
+  },
+  {
+    "text": " in",
+    "startMs": 38620,
+    "endMs": 38830,
+    "timestampMs": 38360,
+    "confidence": 0.996964
+  },
+  {
+    "text": " the",
+    "startMs": 38830,
+    "endMs": 39140,
+    "timestampMs": 38500,
+    "confidence": 0.995516
+  },
+  {
+    "text": " grass",
+    "startMs": 39140,
+    "endMs": 39670,
+    "timestampMs": 38760,
+    "confidence": 0.999828
+  },
+  {
+    "text": " and",
+    "startMs": 39670,
+    "endMs": 39980,
+    "timestampMs": 39180,
+    "confidence": 0.934192
+  },
+  {
+    "text": " peekaboo.",
+    "startMs": 39980,
+    "endMs": 42000,
+    "timestampMs": 39720,
+    "confidence": 0.996023
+  },
+  {
+    "text": " Parrot,",
+    "startMs": 43000,
+    "endMs": 43660,
+    "timestampMs": 43560,
+    "confidence": 0.931794
+  },
+  {
+    "text": " parrot,",
+    "startMs": 43660,
+    "endMs": 44320,
+    "timestampMs": 44180,
+    "confidence": 0.997921
+  },
+  {
+    "text": " where",
+    "startMs": 44320,
+    "endMs": 44740,
+    "timestampMs": 44760,
+    "confidence": 0.997607
+  },
+  {
+    "text": " are",
+    "startMs": 44740,
+    "endMs": 44990,
+    "timestampMs": 45060,
+    "confidence": 0.999264
+  },
+  {
+    "text": " you?",
+    "startMs": 44990,
+    "endMs": 45490,
+    "timestampMs": 45560,
+    "confidence": 0.999634
+  },
+  {
+    "text": " Here",
+    "startMs": 45490,
+    "endMs": 45820,
+    "timestampMs": 46020,
+    "confidence": 0.996873
+  },
+  {
+    "text": " I",
+    "startMs": 45820,
+    "endMs": 45900,
+    "timestampMs": 46220,
+    "confidence": 0.999527
+  },
+  {
+    "text": " am,",
+    "startMs": 45900,
+    "endMs": 46220,
+    "timestampMs": 46440,
+    "confidence": 0.999756
+  },
+  {
+    "text": " here",
+    "startMs": 46220,
+    "endMs": 46550,
+    "timestampMs": 46660,
+    "confidence": 0.999253
+  },
+  {
+    "text": " I",
+    "startMs": 46550,
+    "endMs": 46630,
+    "timestampMs": 46860,
+    "confidence": 0.999733
+  },
+  {
+    "text": " am.",
+    "startMs": 46630,
+    "endMs": 47040,
+    "timestampMs": 47000,
+    "confidence": 0.99971
+  },
+  {
+    "text": " I",
+    "startMs": 47040,
+    "endMs": 47120,
+    "timestampMs": 47140,
+    "confidence": 0.998056
+  },
+  {
+    "text": " talk",
+    "startMs": 47120,
+    "endMs": 47460,
+    "timestampMs": 47360,
+    "confidence": 0.990367
+  },
+  {
+    "text": " and",
+    "startMs": 47460,
+    "endMs": 47730,
+    "timestampMs": 47460,
+    "confidence": 0.987716
+  },
+  {
+    "text": " squawk",
+    "startMs": 47730,
+    "endMs": 48200,
+    "timestampMs": 47600,
+    "confidence": 0.958661
+  },
+  {
+    "text": " for",
+    "startMs": 48200,
+    "endMs": 48470,
+    "timestampMs": 47860,
+    "confidence": 0.997809
+  },
+  {
+    "text": " you.",
+    "startMs": 48470,
+    "endMs": 48950,
+    "timestampMs": 48100,
+    "confidence": 0.99942
+  },
+  {
+    "text": " I",
+    "startMs": 48950,
+    "endMs": 49030,
+    "timestampMs": 48400,
+    "confidence": 0.998083
+  },
+  {
+    "text": " copy",
+    "startMs": 49030,
+    "endMs": 49360,
+    "timestampMs": 48780,
+    "confidence": 0.996808
+  },
+  {
+    "text": " your",
+    "startMs": 49360,
+    "endMs": 49690,
+    "timestampMs": 49100,
+    "confidence": 0.994222
+  },
+  {
+    "text": " words,",
+    "startMs": 49690,
+    "endMs": 50270,
+    "timestampMs": 49420,
+    "confidence": 0.99636
+  },
+  {
+    "text": " hello,",
+    "startMs": 50270,
+    "endMs": 50850,
+    "timestampMs": 50000,
+    "confidence": 0.726781
+  },
+  {
+    "text": " how",
+    "startMs": 50850,
+    "endMs": 51100,
+    "timestampMs": 50720,
+    "confidence": 0.991363
+  },
+  {
+    "text": " are",
+    "startMs": 51100,
+    "endMs": 51350,
+    "timestampMs": 51100,
+    "confidence": 0.998414
+  },
+  {
+    "text": " you?",
+    "startMs": 51350,
+    "endMs": 52000,
+    "timestampMs": 51960,
+    "confidence": 0.999661
+  },
+  {
+    "text": " Crocodile,",
+    "startMs": 52000,
+    "endMs": 53070,
+    "timestampMs": 54000,
+    "confidence": 0.98631
+  },
+  {
+    "text": " crocodile,",
+    "startMs": 53070,
+    "endMs": 54140,
+    "timestampMs": 54800,
+    "confidence": 0.997466
+  },
+  {
+    "text": " where",
+    "startMs": 54140,
+    "endMs": 54630,
+    "timestampMs": 55420,
+    "confidence": 0.998174
+  },
+  {
+    "text": " are",
+    "startMs": 54630,
+    "endMs": 54930,
+    "timestampMs": 55800,
+    "confidence": 0.99947
+  },
+  {
+    "text": " you?",
+    "startMs": 54930,
+    "endMs": 55520,
+    "timestampMs": 56200,
+    "confidence": 0.999744
+  },
+  {
+    "text": " Here",
+    "startMs": 55520,
+    "endMs": 55920,
+    "timestampMs": 56680,
+    "confidence": 0.998491
+  },
+  {
+    "text": " I",
+    "startMs": 55920,
+    "endMs": 56020,
+    "timestampMs": 56900,
+    "confidence": 0.999611
+  },
+  {
+    "text": " am,",
+    "startMs": 56020,
+    "endMs": 56410,
+    "timestampMs": 57100,
+    "confidence": 0.999851
+  },
+  {
+    "text": " here",
+    "startMs": 56410,
+    "endMs": 56810,
+    "timestampMs": 57340,
+    "confidence": 0.999417
+  },
+  {
+    "text": " I",
+    "startMs": 56810,
+    "endMs": 56910,
+    "timestampMs": 57540,
+    "confidence": 0.999775
+  },
+  {
+    "text": " am.",
+    "startMs": 56910,
+    "endMs": 57400,
+    "timestampMs": 57680,
+    "confidence": 0.999794
+  },
+  {
+    "text": " I",
+    "startMs": 57400,
+    "endMs": 57500,
+    "timestampMs": 57800,
+    "confidence": 0.996352
+  },
+  {
+    "text": " snap",
+    "startMs": 57500,
+    "endMs": 57900,
+    "timestampMs": 57980,
+    "confidence": 0.99677
+  },
+  {
+    "text": " my",
+    "startMs": 57900,
+    "endMs": 58100,
+    "timestampMs": 58180,
+    "confidence": 0.995391
+  },
+  {
+    "text": " jaw",
+    "startMs": 58100,
+    "endMs": 58400,
+    "timestampMs": 58360,
+    "confidence": 0.994327
+  },
+  {
+    "text": " at",
+    "startMs": 58400,
+    "endMs": 58600,
+    "timestampMs": 58560,
+    "confidence": 0.951706
+  },
+  {
+    "text": " you.",
+    "startMs": 58600,
+    "endMs": 59190,
+    "timestampMs": 58760,
+    "confidence": 0.998986
+  },
+  {
+    "text": " I",
+    "startMs": 59190,
+    "endMs": 59290,
+    "timestampMs": 59020,
+    "confidence": 0.995497
+  },
+  {
+    "text": " splash",
+    "startMs": 59290,
+    "endMs": 59880,
+    "timestampMs": 59380,
+    "confidence": 0.991989
+  },
+  {
+    "text": " in",
+    "startMs": 59880,
+    "endMs": 60080,
+    "timestampMs": 59720,
+    "confidence": 0.996041
+  },
+  {
+    "text": " the",
+    "startMs": 60080,
+    "endMs": 60380,
+    "timestampMs": 59860,
+    "confidence": 0.997447
+  },
+  {
+    "text": " river,",
+    "startMs": 60380,
+    "endMs": 61070,
+    "timestampMs": 60200,
+    "confidence": 0.997516
+  },
+  {
+    "text": " chomp,",
+    "startMs": 61070,
+    "endMs": 61740,
+    "timestampMs": 60700,
+    "confidence": 0.984928
+  },
+  {
+    "text": " chomp",
+    "startMs": 61740,
+    "endMs": 62230,
+    "timestampMs": 61380,
+    "confidence": 0.998639
+  },
+  {
+    "text": " too.",
+    "startMs": 62230,
+    "endMs": 63000,
+    "timestampMs": 62700,
+    "confidence": 0.849181
+  },
+  {
+    "text": " Zebra,",
+    "startMs": 64000,
+    "endMs": 64570,
+    "timestampMs": 64720,
+    "confidence": 0.990339
+  },
+  {
+    "text": " zebra,",
+    "startMs": 64570,
+    "endMs": 65220,
+    "timestampMs": 65360,
+    "confidence": 0.991955
+  },
+  {
+    "text": " where",
+    "startMs": 65220,
+    "endMs": 65550,
+    "timestampMs": 66100,
+    "confidence": 0.997649
+  },
+  {
+    "text": " are",
+    "startMs": 65550,
+    "endMs": 65850,
+    "timestampMs": 66460,
+    "confidence": 0.999378
+  },
+  {
+    "text": " you?",
+    "startMs": 65850,
+    "endMs": 66290,
+    "timestampMs": 67000,
+    "confidence": 0.999653
+  },
+  {
+    "text": " Here",
+    "startMs": 66290,
+    "endMs": 66620,
+    "timestampMs": 67340,
+    "confidence": 0.999075
+  },
+  {
+    "text": " I",
+    "startMs": 66620,
+    "endMs": 66700,
+    "timestampMs": 67560,
+    "confidence": 0.999443
+  },
+  {
+    "text": " am,",
+    "startMs": 66700,
+    "endMs": 67020,
+    "timestampMs": 67760,
+    "confidence": 0.999748
+  },
+  {
+    "text": " here",
+    "startMs": 67020,
+    "endMs": 67350,
+    "timestampMs": 68000,
+    "confidence": 0.999634
+  },
+  {
+    "text": " I",
+    "startMs": 67350,
+    "endMs": 67430,
+    "timestampMs": 68200,
+    "confidence": 0.999703
+  },
+  {
+    "text": " am.",
+    "startMs": 67430,
+    "endMs": 67830,
+    "timestampMs": 68340,
+    "confidence": 0.999706
+  },
+  {
+    "text": " My",
+    "startMs": 67830,
+    "endMs": 67990,
+    "timestampMs": 68500,
+    "confidence": 0.565012
+  },
+  {
+    "text": " stripes",
+    "startMs": 67990,
+    "endMs": 68570,
+    "timestampMs": 68680,
+    "confidence": 0.921315
+  },
+  {
+    "text": " black",
+    "startMs": 68570,
+    "endMs": 68980,
+    "timestampMs": 69000,
+    "confidence": 0.743202
+  },
+  {
+    "text": " and",
+    "startMs": 68980,
+    "endMs": 69230,
+    "timestampMs": 69180,
+    "confidence": 0.996542
+  },
+  {
+    "text": " blue,",
+    "startMs": 69230,
+    "endMs": 69720,
+    "timestampMs": 69420,
+    "confidence": 0.998517
+  },
+  {
+    "text": " I",
+    "startMs": 69720,
+    "endMs": 69800,
+    "timestampMs": 69760,
+    "confidence": 0.996383
+  },
+  {
+    "text": " gallop",
+    "startMs": 69800,
+    "endMs": 70290,
+    "timestampMs": 70020,
+    "confidence": 0.997177
+  },
+  {
+    "text": " through",
+    "startMs": 70290,
+    "endMs": 70870,
+    "timestampMs": 70380,
+    "confidence": 0.990841
+  },
+  {
+    "text": " grass",
+    "startMs": 70870,
+    "endMs": 71280,
+    "timestampMs": 70740,
+    "confidence": 0.976302
+  },
+  {
+    "text": " with",
+    "startMs": 71280,
+    "endMs": 71610,
+    "timestampMs": 71000,
+    "confidence": 0.995232
+  },
+  {
+    "text": " my",
+    "startMs": 71610,
+    "endMs": 71770,
+    "timestampMs": 71220,
+    "confidence": 0.99827
+  },
+  {
+    "text": " jungle",
+    "startMs": 71770,
+    "endMs": 72260,
+    "timestampMs": 71900,
+    "confidence": 0.982602
+  },
+  {
+    "text": " crew.",
+    "startMs": 72260,
+    "endMs": 73000,
+    "timestampMs": 73440,
+    "confidence": 0.995797
+  },
+  {
+    "text": " Giraffe,",
+    "startMs": 73000,
+    "endMs": 73920,
+    "timestampMs": 75040,
+    "confidence": 0.985912
+  },
+  {
+    "text": " giraffe,",
+    "startMs": 73920,
+    "endMs": 74840,
+    "timestampMs": 75920,
+    "confidence": 0.99822
+  },
+  {
+    "text": " where",
+    "startMs": 74840,
+    "endMs": 75360,
+    "timestampMs": 76780,
+    "confidence": 0.998814
+  },
+  {
+    "text": " are",
+    "startMs": 75360,
+    "endMs": 75670,
+    "timestampMs": 77140,
+    "confidence": 0.999615
+  },
+  {
+    "text": " you?",
+    "startMs": 75670,
+    "endMs": 76500,
+    "timestampMs": 77580,
+    "confidence": 0.999813
+  },
+  {
+    "text": " Here",
+    "startMs": 76500,
+    "endMs": 76700,
+    "timestampMs": 78020,
+    "confidence": 0.998742
+  },
+  {
+    "text": " I",
+    "startMs": 76700,
+    "endMs": 76800,
+    "timestampMs": 78240,
+    "confidence": 0.999706
+  },
+  {
+    "text": " am,",
+    "startMs": 76800,
+    "endMs": 77210,
+    "timestampMs": 78440,
+    "confidence": 0.999874
+  },
+  {
+    "text": " here",
+    "startMs": 77210,
+    "endMs": 77620,
+    "timestampMs": 78680,
+    "confidence": 0.99958
+  },
+  {
+    "text": " I",
+    "startMs": 77620,
+    "endMs": 77720,
+    "timestampMs": 78860,
+    "confidence": 0.999809
+  },
+  {
+    "text": " am.",
+    "startMs": 77720,
+    "endMs": 78240,
+    "timestampMs": 79020,
+    "confidence": 0.999828
+  },
+  {
+    "text": " I",
+    "startMs": 78240,
+    "endMs": 78340,
+    "timestampMs": 79160,
+    "confidence": 0.996603
+  },
+  {
+    "text": " see",
+    "startMs": 78340,
+    "endMs": 78650,
+    "timestampMs": 79360,
+    "confidence": 0.994953
+  },
+  {
+    "text": " above",
+    "startMs": 78650,
+    "endMs": 79170,
+    "timestampMs": 79660,
+    "confidence": 0.996143
+  },
+  {
+    "text": " the",
+    "startMs": 79170,
+    "endMs": 79480,
+    "timestampMs": 79860,
+    "confidence": 0.994529
+  },
+  {
+    "text": " view,",
+    "startMs": 79480,
+    "endMs": 80090,
+    "timestampMs": 80120,
+    "confidence": 0.996333
+  },
+  {
+    "text": " I",
+    "startMs": 80090,
+    "endMs": 80190,
+    "timestampMs": 80460,
+    "confidence": 0.997059
+  },
+  {
+    "text": " munch",
+    "startMs": 80190,
+    "endMs": 80700,
+    "timestampMs": 80680,
+    "confidence": 0.995602
+  },
+  {
+    "text": " green",
+    "startMs": 80700,
+    "endMs": 81220,
+    "timestampMs": 81060,
+    "confidence": 0.998643
+  },
+  {
+    "text": " leaves",
+    "startMs": 81220,
+    "endMs": 81840,
+    "timestampMs": 81440,
+    "confidence": 0.988399
+  },
+  {
+    "text": " with",
+    "startMs": 81840,
+    "endMs": 82250,
+    "timestampMs": 81680,
+    "confidence": 0.995927
+  },
+  {
+    "text": " the",
+    "startMs": 82250,
+    "endMs": 82560,
+    "timestampMs": 81900,
+    "confidence": 0.916627
+  },
+  {
+    "text": " neck,",
+    "startMs": 82560,
+    "endMs": 83180,
+    "timestampMs": 82200,
+    "confidence": 0.85996
+  },
+  {
+    "text": " so",
+    "startMs": 83180,
+    "endMs": 83380,
+    "timestampMs": 82760,
+    "confidence": 0.992555
+  },
+  {
+    "text": " true.",
+    "startMs": 83380,
+    "endMs": 84000,
+    "timestampMs": 84040,
+    "confidence": 0.998597
+  },
+  {
+    "text": " Gorilla,",
+    "startMs": 85000,
+    "endMs": 85780,
+    "timestampMs": 85900,
+    "confidence": 0.80748
+  },
+  {
+    "text": " gorilla,",
+    "startMs": 85780,
+    "endMs": 86560,
+    "timestampMs": 86780,
+    "confidence": 0.876878
+  },
+  {
+    "text": " where",
+    "startMs": 86560,
+    "endMs": 87000,
+    "timestampMs": 87400,
+    "confidence": 0.998178
+  },
+  {
+    "text": " are",
+    "startMs": 87000,
+    "endMs": 87260,
+    "timestampMs": 87800,
+    "confidence": 0.999577
+  },
+  {
+    "text": " you?",
+    "startMs": 87260,
+    "endMs": 87780,
+    "timestampMs": 88220,
+    "confidence": 0.999729
+  },
+  {
+    "text": " Here",
+    "startMs": 87780,
+    "endMs": 88130,
+    "timestampMs": 88660,
+    "confidence": 0.995699
+  },
+  {
+    "text": " I",
+    "startMs": 88130,
+    "endMs": 88210,
+    "timestampMs": 88860,
+    "confidence": 0.999497
+  },
+  {
+    "text": " am,",
+    "startMs": 88210,
+    "endMs": 88550,
+    "timestampMs": 89100,
+    "confidence": 0.99968
+  },
+  {
+    "text": " here",
+    "startMs": 88550,
+    "endMs": 88900,
+    "timestampMs": 89340,
+    "confidence": 0.999413
+  },
+  {
+    "text": " I",
+    "startMs": 88900,
+    "endMs": 88980,
+    "timestampMs": 89540,
+    "confidence": 0.999836
+  },
+  {
+    "text": " am.",
+    "startMs": 88980,
+    "endMs": 89410,
+    "timestampMs": 89700,
+    "confidence": 0.999691
+  },
+  {
+    "text": " I",
+    "startMs": 89410,
+    "endMs": 89490,
+    "timestampMs": 89880,
+    "confidence": 0.993885
+  },
+  {
+    "text": " pound",
+    "startMs": 89490,
+    "endMs": 89930,
+    "timestampMs": 89980,
+    "confidence": 0.988934
+  },
+  {
+    "text": " my",
+    "startMs": 89930,
+    "endMs": 90100,
+    "timestampMs": 90160,
+    "confidence": 0.994541
+  },
+  {
+    "text": " chest",
+    "startMs": 90100,
+    "endMs": 90540,
+    "timestampMs": 90300,
+    "confidence": 0.999007
+  },
+  {
+    "text": " for",
+    "startMs": 90540,
+    "endMs": 90800,
+    "timestampMs": 90540,
+    "confidence": 0.998167
+  },
+  {
+    "text": " you.",
+    "startMs": 90800,
+    "endMs": 91320,
+    "timestampMs": 90760,
+    "confidence": 0.999226
+  },
+  {
+    "text": " I",
+    "startMs": 91320,
+    "endMs": 91400,
+    "timestampMs": 90960,
+    "confidence": 0.998944
+  },
+  {
+    "text": " m",
+    "startMs": 91400,
+    "endMs": 91480,
+    "timestampMs": 91100,
+    "confidence": 0.680888
+  },
+  {
+    "text": " strong",
+    "startMs": 91480,
+    "endMs": 92020,
+    "timestampMs": 91440,
+    "confidence": 0.993854
+  },
+  {
+    "text": " and",
+    "startMs": 92020,
+    "endMs": 92270,
+    "timestampMs": 91840,
+    "confidence": 0.997318
+  },
+  {
+    "text": " gentle",
+    "startMs": 92270,
+    "endMs": 92800,
+    "timestampMs": 92100,
+    "confidence": 0.992604
+  },
+  {
+    "text": " with",
+    "startMs": 92800,
+    "endMs": 93150,
+    "timestampMs": 92320,
+    "confidence": 0.993441
+  },
+  {
+    "text": " my",
+    "startMs": 93150,
+    "endMs": 93320,
+    "timestampMs": 92540,
+    "confidence": 0.996253
+  },
+  {
+    "text": " jungle",
+    "startMs": 93320,
+    "endMs": 93860,
+    "timestampMs": 92980,
+    "confidence": 0.992437
+  },
+  {
+    "text": " troop",
+    "startMs": 93860,
+    "endMs": 94290,
+    "timestampMs": 93500,
+    "confidence": 0.828683
+  },
+  {
+    "text": " too.",
+    "startMs": 94290,
+    "endMs": 95000,
+    "timestampMs": 95040,
+    "confidence": 0.936504
+  },
+  {
+    "text": " Lion,",
+    "startMs": 95000,
+    "endMs": 96050,
+    "timestampMs": 97000,
+    "confidence": 0.988814
+  },
+  {
+    "text": " lion,",
+    "startMs": 96050,
+    "endMs": 96460,
+    "timestampMs": 97600,
+    "confidence": 0.982038
+  },
+  {
+    "text": " where",
+    "startMs": 96460,
+    "endMs": 96870,
+    "timestampMs": 98120,
+    "confidence": 0.998567
+  },
+  {
+    "text": " are",
+    "startMs": 96870,
+    "endMs": 97200,
+    "timestampMs": 98480,
+    "confidence": 0.999573
+  },
+  {
+    "text": " you?",
+    "startMs": 97200,
+    "endMs": 97860,
+    "timestampMs": 98960,
+    "confidence": 0.999809
+  },
+  {
+    "text": " Here",
+    "startMs": 97860,
+    "endMs": 98300,
+    "timestampMs": 99360,
+    "confidence": 0.997851
+  },
+  {
+    "text": " I",
+    "startMs": 98300,
+    "endMs": 98410,
+    "timestampMs": 99560,
+    "confidence": 0.999638
+  },
+  {
+    "text": " am,",
+    "startMs": 98410,
+    "endMs": 98850,
+    "timestampMs": 99760,
+    "confidence": 0.999771
+  },
+  {
+    "text": " here",
+    "startMs": 98850,
+    "endMs": 99290,
+    "timestampMs": 100020,
+    "confidence": 0.999321
+  },
+  {
+    "text": " I",
+    "startMs": 99290,
+    "endMs": 99400,
+    "timestampMs": 100200,
+    "confidence": 0.999783
+  },
+  {
+    "text": " am.",
+    "startMs": 99400,
+    "endMs": 99950,
+    "timestampMs": 100340,
+    "confidence": 0.999554
+  },
+  {
+    "text": " I",
+    "startMs": 99950,
+    "endMs": 100060,
+    "timestampMs": 100520,
+    "confidence": 0.994408
+  },
+  {
+    "text": " roar",
+    "startMs": 100060,
+    "endMs": 100500,
+    "timestampMs": 100660,
+    "confidence": 0.998062
+  },
+  {
+    "text": " so",
+    "startMs": 100500,
+    "endMs": 100720,
+    "timestampMs": 100840,
+    "confidence": 0.995383
+  },
+  {
+    "text": " loud",
+    "startMs": 100720,
+    "endMs": 101160,
+    "timestampMs": 100980,
+    "confidence": 0.998694
+  },
+  {
+    "text": " for",
+    "startMs": 101160,
+    "endMs": 101490,
+    "timestampMs": 101220,
+    "confidence": 0.997691
+  },
+  {
+    "text": " you.",
+    "startMs": 101490,
+    "endMs": 102150,
+    "timestampMs": 101440,
+    "confidence": 0.999321
+  },
+  {
+    "text": " I",
+    "startMs": 102150,
+    "endMs": 102260,
+    "timestampMs": 101680,
+    "confidence": 0.990157
+  },
+  {
+    "text": " m",
+    "startMs": 102260,
+    "endMs": 102370,
+    "timestampMs": 101840,
+    "confidence": 0.943176
+  },
+  {
+    "text": " king",
+    "startMs": 102370,
+    "endMs": 102810,
+    "timestampMs": 102060,
+    "confidence": 0.881868
+  },
+  {
+    "text": " of",
+    "startMs": 102810,
+    "endMs": 103030,
+    "timestampMs": 102400,
+    "confidence": 0.997466
+  },
+  {
+    "text": " the",
+    "startMs": 103030,
+    "endMs": 103360,
+    "timestampMs": 102540,
+    "confidence": 0.997078
+  },
+  {
+    "text": " jungle,",
+    "startMs": 103360,
+    "endMs": 104240,
+    "timestampMs": 102940,
+    "confidence": 0.993923
+  },
+  {
+    "text": " brave",
+    "startMs": 104240,
+    "endMs": 104790,
+    "timestampMs": 103680,
+    "confidence": 0.997718
+  },
+  {
+    "text": " and",
+    "startMs": 104790,
+    "endMs": 105120,
+    "timestampMs": 104320,
+    "confidence": 0.997101
+  },
+  {
+    "text": " true.",
+    "startMs": 105120,
+    "endMs": 106000,
+    "timestampMs": 105220,
+    "confidence": 0.999527
+  },
+  {
+    "text": " [Music]",
+    "startMs": 107000,
+    "endMs": 109000,
+    "timestampMs": 107380,
+    "confidence": 0.998536
+  },
+  {
+    "text": " [BLANK_AUDIO]",
+    "startMs": 109000,
+    "endMs": 116300,
+    "timestampMs": 109920,
+    "confidence": 0.462924
+  }
+]
