@@ -24,7 +24,7 @@ export const TiktokCaptionComposition: React.FC<{
   );
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "black" }}>
+    <AbsoluteFill style={{ backgroundColor: "transparent" }}>
       <div
         style={{
           position: "absolute",

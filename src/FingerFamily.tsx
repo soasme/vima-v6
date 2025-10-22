@@ -5,6 +5,7 @@ import { FingerPage } from "./FingerFamily/FingerPage";
 import { MysteriousObjectPage } from "./FingerFamily/MysteriousObjectPage";
 import { MysteriousRevealPage } from "./FingerFamily/MysteriousReveal";
 import { EntroPage } from "./Common/Entro";
+import { FingerFamilyTiktokCaptionComposition } from "./FingerFamily/FingerFamilyTiktokCaptionComposition";
 
 export const fingerFamilySchema = z.object({
   objects: z.array(z.object({
@@ -15,6 +16,8 @@ export const fingerFamilySchema = z.object({
     fingerDuration: z.number(),
   })).length(10),
   bgm: z.string().optional(),
+  lyrics: z.string().optional(),
+  lyricsStartAt: z.number().optional().default(0),
 });
 
 type FingerFamilyProps = z.infer<typeof fingerFamilySchema>;
@@ -73,7 +76,9 @@ export const calculateMetadata = ({ props }: { props: FingerFamilyProps }) => {
 
 export const FingerFamily: React.FC<FingerFamilyProps> = ({ 
   objects, 
-  bgm
+  bgm,
+  lyrics,
+  lyricsStartAt = 0
 }) => {
   const { fps } = useVideoConfig();
 
@@ -177,6 +182,15 @@ export const FingerFamily: React.FC<FingerFamilyProps> = ({
       >
         <EntroPage duration={5} />
       </Sequence>
+      
+      {/* Conditional TikTok captions */}
+      {lyrics && (
+        <FingerFamilyTiktokCaptionComposition
+          lyrics={lyrics}
+          objects={objects}
+          lyricsStartAt={lyricsStartAt}
+        />
+      )}
     </>
   );
 };
