@@ -8,7 +8,8 @@ import { MysteriousRevealComposition, mysteriousRevealSchema } from "./FingerFam
 import { BurstStarEffect, burstStarSchema } from "./Effects/BurstStar";
 import { EntroPage, entroSchema } from "./Common/Entro";
 import { JigsawPageComposition, jigsawPageSchema } from "./JigsawPage/JigsawPageComposition";
-import { TiktokCaptionComposition, tiktokCaptionSchema, FingerFamilyTiktokCaptionComposition, fingerFamilyTiktokCaptionSchema } from "./TiktokCaption";
+import { TiktokCaptionComposition, tiktokCaptionSchema } from "./TiktokCaption";
+import { FingerFamilyTiktokCaptionComposition, fingerFamilyTiktokCaptionSchema } from "./FingerFamily/FingerFamilyTiktokCaptionComposition";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -38,7 +39,16 @@ export const RemotionRoot: React.FC = () => {
             { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }, // Object 9 - ring
             { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }  // Object 10 - pinky
           ],
-          bgm: "https://cdn1.suno.ai/31d5ebf2-2686-4ecc-9cd6-458067461c9e.mp3"
+          bgm: "https://cdn1.suno.ai/31d5ebf2-2686-4ecc-9cd6-458067461c9e.mp3",
+          lyrics: `[Verse 1 – Happy Pumpkin]
+Happy pumpkin, happy pumpkin, where are you?
+Here I am, here I am, smiling bright and true!
+Ha-ha-ha, I'm feeling happy too!
+
+[Verse 2 – Sad Pumpkin]
+Sad pumpkin, sad pumpkin, where are you?
+Here I am, here I am, feeling kind of blue!
+Boo-hoo-hoo, I'm feeling sad, it's true!`
         }}
       />
 
@@ -176,7 +186,12 @@ Ha-ha-ha, I'm feeling happy too!
 Sad pumpkin, sad pumpkin, where are you?
 Here I am, here I am, feeling kind of blue!
 Boo-hoo-hoo, I'm feeling sad, it's true!`,
-          durationPerLineMs: 2000
+          objects: [
+            { mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 },
+            { mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 },
+            { mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 },
+            { mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }
+          ]
         }}
       />
 
