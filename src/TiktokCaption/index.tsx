@@ -1,0 +1,1 @@
+export { TiktokCaptionComposition, tiktokCaptionSchema } from './TiktokCaptionComposition';

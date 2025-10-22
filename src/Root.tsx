@@ -8,6 +8,7 @@ import { MysteriousRevealComposition, mysteriousRevealSchema } from "./FingerFam
 import { BurstStarEffect, burstStarSchema } from "./Effects/BurstStar";
 import { EntroPage, entroSchema } from "./Common/Entro";
 import { JigsawPageComposition, jigsawPageSchema } from "./JigsawPage/JigsawPageComposition";
+import { TiktokCaptionComposition, tiktokCaptionSchema, FingerFamilyTiktokCaptionComposition, fingerFamilyTiktokCaptionSchema } from "./TiktokCaption";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -129,6 +130,53 @@ export const RemotionRoot: React.FC = () => {
           pieceRevealDuration: 30,
           pieceFadeDuration: 15,
           randomOrder: true
+        }}
+      />
+
+      <Composition
+        id="TiktokCaption"
+        component={TiktokCaptionComposition}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={tiktokCaptionSchema}
+        defaultProps={{
+          captions: [
+            { text: "Tiger,", startMs: 430, endMs: 840 },
+            { text: " tiger,", startMs: 840, endMs: 1660 },
+            { text: " where", startMs: 1660, endMs: 2260 },
+            { text: " are", startMs: 2260, endMs: 2500 },
+            { text: " you?", startMs: 2500, endMs: 3380 },
+            { text: " Here", startMs: 3380, endMs: 3680 },
+            { text: " I", startMs: 3680, endMs: 3800 },
+            { text: " am,", startMs: 3800, endMs: 4040 },
+            { text: " here", startMs: 4040, endMs: 4280 },
+            { text: " I", startMs: 4280, endMs: 4400 },
+            { text: " am.", startMs: 4400, endMs: 4720 }
+          ]
+        }}
+      />
+
+      <Composition
+        id="FingerFamilyTiktokCaption"
+        component={FingerFamilyTiktokCaptionComposition}
+        durationInFrames={300}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={fingerFamilyTiktokCaptionSchema}
+        defaultProps={{
+          lyrics: `[Verse 1 – Happy Pumpkin]
+Happy pumpkin, happy pumpkin, where are you?
+Here I am, here I am, smiling bright and true!
+Ha-ha-ha, I'm feeling happy too!
+
+[Verse 2 – Sad Pumpkin]
+Sad pumpkin, sad pumpkin, where are you?
+Here I am, here I am, feeling kind of blue!
+Boo-hoo-hoo, I'm feeling sad, it's true!`,
+          durationPerLineMs: 2000
         }}
       />
 

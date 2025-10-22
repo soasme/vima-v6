@@ -35,8 +35,8 @@ export const MysteriousObjectPage: React.FC<Omit<ObjectPageProps, 'frame' | 'dur
     }
   );
   
-  // Scale from 0.7 to 1.2 over the duration
-  const currentScale = interpolate(scaleProgress, [0, 1], [0.7, 1.2]);
+  // Scale from 1.4 to 2.4 over the duration (initial scale x2)
+  const currentScale = interpolate(scaleProgress, [0, 1], [1.4, 2.4]);
 
   // Beat animation (starts after slide-in)
   const beatStartFrame = slideInDuration;

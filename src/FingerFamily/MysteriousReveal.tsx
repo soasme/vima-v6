@@ -50,8 +50,8 @@ export const MysteriousRevealPage: React.FC<Omit<ObjectPageProps, 'frame' | 'dur
     },
   }) : 0;
   
-  // Scale from 1.2 to 2.0x during the spring animation (bigger scaling)
-  const currentScale = interpolate(scaleProgress, [0, 1], [1.2, 2.0]);
+  // Scale from 2.4 to 2.0x during the spring animation (matches MysteriousObjectPage ending scale)
+  const currentScale = interpolate(scaleProgress, [0, 1], [2.4, 2.0]);
 
   const isBackgroundImage = background?.endsWith('.png') || background?.endsWith('.jpg') || background?.endsWith('.jpeg');
 

@@ -122,9 +122,9 @@ export const FingerPage: React.FC<Omit<FingerPageProps, 'frame' | 'duration'>> =
   const screenCenterX = 960;
   const screenCenterY = 540;
   
-  // Calculate translation needed to center the finger
+  // Calculate translation needed to center the finger (with camera positioned lower)
   const targetTranslateX = screenCenterX - fingerX;
-  const targetTranslateY = screenCenterY - fingerY;
+  const targetTranslateY = screenCenterY - fingerY - 150; // -150px to position camera lower (finger appears higher)
   
   const cameraTranslateX = interpolate(
     enlargementProgress,
