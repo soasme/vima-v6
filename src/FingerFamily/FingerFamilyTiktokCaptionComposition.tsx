@@ -148,13 +148,18 @@ export const FingerFamilyTiktokCaptionComposition: React.FC<{
   const displayedWords = currentCaption ? getDisplayedWords(currentCaption) : null;
   const hasText = displayedWords && displayedWords.length > 0;
 
-  // Calculate spring animation for scale when text first appears
+  // Calculate spring animation for scale when caption first appears (not for each word)
   const getSpringScale = () => {
     if (!currentCaption) return 0;
     
+    // Only animate the initial appearance of the caption, not each word
     const framesIntoCaption = (timeMs - currentCaption.startMs) / 1000 * fps;
+    
+    // Limit spring animation to first 30 frames (1 second at 30fps)
+    const springFrame = Math.min(framesIntoCaption, 30);
+    
     const springScale = spring({
-      frame: framesIntoCaption,
+      frame: springFrame,
       fps,
       config: {
         damping: 10,

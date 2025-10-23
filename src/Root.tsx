@@ -10,6 +10,7 @@ import { EntroPage, entroSchema } from "./Common/Entro";
 import { JigsawPageComposition, jigsawPageSchema } from "./JigsawPage/JigsawPageComposition";
 import { TiktokCaptionComposition, tiktokCaptionSchema } from "./TiktokCaption";
 import { FingerFamilyTiktokCaptionComposition, fingerFamilyTiktokCaptionSchema } from "./FingerFamily/FingerFamilyTiktokCaptionComposition";
+import { TiktokCaption2Composition, tiktokCaption2Schema } from "./TiktokCaption2";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -192,6 +193,20 @@ Boo-hoo-hoo, I'm feeling sad, it's true!`,
             { mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 },
             { mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }
           ]
+        }}
+      />
+
+      <Composition
+        id="TiktokCaption2"
+        component={TiktokCaption2Composition}
+        durationInFrames={3300}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={tiktokCaption2Schema}
+        defaultProps={{
+          outputJsonPath: "halloween-finger-family/output.json",
+          combineTokensWithinMilliseconds: 1200
         }}
       />
 
