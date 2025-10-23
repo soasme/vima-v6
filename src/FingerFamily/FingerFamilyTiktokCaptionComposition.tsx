@@ -60,15 +60,17 @@ const parseLyrics = (lyrics: string, objects: Array<{ mysteriousDuration: number
     groups.push(currentGroup);
   }
   
-  // Validate that number of groups matches number of objects
+  // Limit lyrics groups to match the number of objects available
+  // For example, if there are 9 objects, only process first 9 lyric groups (stopping at ring finger)
+  const processableGroups = Math.min(groups.length, objects.length);
   if (groups.length !== objects.length) {
-    console.warn(`Number of lyric groups (${groups.length}) does not match number of objects (${objects.length})`);
+    console.warn(`Number of lyric groups (${groups.length}) does not match number of objects (${objects.length}). Processing ${processableGroups} groups.`);
   }
   
   let currentTimeMs = lyricsStartAt * 1000; // Convert lyricsStartAt to milliseconds
   
   // Process each group with its corresponding object
-  for (let groupIndex = 0; groupIndex < Math.min(groups.length, objects.length); groupIndex++) {
+  for (let groupIndex = 0; groupIndex < processableGroups; groupIndex++) {
     const group = groups[groupIndex];
     const obj = objects[groupIndex];
     

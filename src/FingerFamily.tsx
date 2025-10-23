@@ -14,7 +14,7 @@ export const fingerFamilySchema = z.object({
     mysteriousDuration: z.number(),
     revealDuration: z.number(),
     fingerDuration: z.number(),
-  })).length(10),
+  })).min(1).max(10),
   bgm: z.string().optional(),
   lyrics: z.string().optional(),
   lyricsStartAt: z.number().optional().default(0),
@@ -82,8 +82,9 @@ export const FingerFamily: React.FC<FingerFamilyProps> = ({
 }) => {
   const { fps } = useVideoConfig();
 
-  // Generate 10 objects: thumb -> pinky, thumb -> pinky
-  const fingers = ["thumb", "index", "middle", "ring", "pinky", "thumb", "index", "middle", "ring", "pinky"] as const;
+  // Generate finger mapping: thumb -> pinky, then repeat if more than 5 objects
+  const fingerPattern = ["thumb", "index", "middle", "ring", "pinky"] as const;
+  const fingers = objects.map((_, index) => fingerPattern[index % 5]);
   
   // Calculate sequence timings for each object
   let currentStartFrame = 0;

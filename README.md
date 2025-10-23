@@ -37,6 +37,18 @@ npx remotion render
 npx remotion upgrade
 ```
 
+Rename midjourney files by filename:
+
+```console
+venv/bin/python scripts/rename.py /tmp
+```
+
+Remove bg:
+
+```console
+venv/bin/python scripts/removebg.py /tmp/*.png
+```
+
 ## Docs
 
 Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
