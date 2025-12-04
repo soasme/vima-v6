@@ -1,5 +1,7 @@
 import React from "react";
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring } from "remotion";
+import { linearTiming, TransitionSeries } from "@remotion/transitions";
+import { flip } from "@remotion/transitions/flip";
 import { z } from "zod";
 
 export const fingerFamilyTiktokCaptionSchema = z.object({
@@ -33,7 +35,7 @@ const parseTime = (time: number): number => {
 };
 
 const parseLyrics = (lyrics: string, objects: Array<{ mysteriousDuration: number; revealDuration: number; fingerDuration: number; }>, lyricsStartAt: number = 0) => {
-  const captions: Array<{ text: string; startMs: number; endMs: number }> = [];
+  const captions: Array<{ text: string; startMs: number; endMs: number; groupIndex: number; lineIndex: number }> = [];
   
   // Parse lyrics into groups based on [...] patterns
   const groups: Array<string[]> = [];
@@ -102,6 +104,8 @@ const parseLyrics = (lyrics: string, objects: Array<{ mysteriousDuration: number
         text: line,
         startMs: currentTimeMs,
         endMs: currentTimeMs + lineDurationMs,
+        groupIndex,
+        lineIndex,
       });
       
       currentTimeMs += lineDurationMs;
@@ -132,46 +136,7 @@ export const FingerFamilyTiktokCaptionComposition: React.FC<{
     return highContrastColors[wordIndex % highContrastColors.length];
   };
 
-  // Calculate which words to display within the current caption
-  const getDisplayedWords = (caption: { text: string; startMs: number; endMs: number }) => {
-    const words = caption.text.split(' ');
-    const captionDurationMs = 2000; // 2 seconds for word-by-word display
-    const timeIntoCaption = timeMs - caption.startMs;
-    const wordDurationMs = captionDurationMs / words.length;
-    const wordsToShow = Math.min(words.length, Math.floor(timeIntoCaption / wordDurationMs) + 1);
-    
-    return words.slice(0, Math.max(0, wordsToShow)).map((word, index) => (
-      <span key={index} style={{ color: getWordColor(index) }}>
-        {word}{index < wordsToShow - 1 ? ' ' : ''}
-      </span>
-    ));
-  };
 
-  const displayedWords = currentCaption ? getDisplayedWords(currentCaption) : null;
-  const hasText = displayedWords && displayedWords.length > 0;
-
-  // Calculate spring animation for scale when caption first appears (not for each word)
-  const getSpringScale = () => {
-    if (!currentCaption) return 0;
-    
-    // Only animate the initial appearance of the caption, not each word
-    const framesIntoCaption = (timeMs - currentCaption.startMs) / 1000 * fps;
-    
-    // Limit spring animation to first 30 frames (1 second at 30fps)
-    const springFrame = Math.min(framesIntoCaption, 30);
-    
-    const springScale = spring({
-      frame: springFrame,
-      fps,
-      config: {
-        damping: 10,
-        stiffness: 100,
-        mass: 0.5,
-      },
-    });
-    
-    return springScale;
-  };
 
   // Get current text content
   const getCurrentText = () => {
@@ -216,31 +181,113 @@ export const FingerFamilyTiktokCaptionComposition: React.FC<{
     return Math.min(estimatedWidth, maxWidth) + 'px';
   };
 
+  // Group captions by groupIndex for transitions
+  const captionGroups = captions.reduce((groups, caption) => {
+    if (!groups[caption.groupIndex]) {
+      groups[caption.groupIndex] = [];
+    }
+    groups[caption.groupIndex].push(caption);
+    return groups;
+  }, {} as Record<number, typeof captions>);
+
+  // Calculate transition timings - flip after each group's third line ends
+  const transitionTimings = Object.values(captionGroups).map((group) => {
+    const thirdLine = group.find(caption => caption.lineIndex === 2);
+    return thirdLine ? thirdLine.endMs : group[group.length - 1].endMs;
+  });
+
+  // Convert timings to frames for TransitionSeries
+  const getFrameFromMs = (ms: number) => Math.floor((ms / 1000) * fps);
+
+  // Create sequences for each group
+  const createGroupSequence = (groupIndex: number) => {
+    const groupCaptions = captionGroups[groupIndex] || [];
+    
+    return (
+      <AbsoluteFill style={{ backgroundColor: "transparent" }}>
+        {groupCaptions.map((caption) => {
+          const isActive = timeMs >= caption.startMs && timeMs < caption.endMs;
+          if (!isActive) return null;
+
+          const words = caption.text.split(' ');
+          const captionDurationMs = 2000;
+          const timeIntoCaption = timeMs - caption.startMs;
+          const wordDurationMs = captionDurationMs / words.length;
+          const wordsToShow = Math.min(words.length, Math.floor(timeIntoCaption / wordDurationMs) + 1);
+          
+          const displayedWords = words.slice(0, Math.max(0, wordsToShow)).map((word, index) => (
+            <span key={index} style={{ color: getWordColor(index) }}>
+              {word}{index < wordsToShow - 1 ? ' ' : ''}
+            </span>
+          ));
+
+          const framesIntoCaption = (timeMs - caption.startMs) / 1000 * fps;
+          const springFrame = Math.min(framesIntoCaption, 30);
+          const springScale = spring({
+            frame: springFrame,
+            fps,
+            config: {
+              damping: 10,
+              stiffness: 100,
+              mass: 0.5,
+            },
+          });
+
+          const currentText = words.slice(0, Math.max(0, wordsToShow)).join(' ');
+
+          return (
+            <div
+              key={caption.startMs}
+              style={{
+                position: "absolute",
+                bottom: 100,
+                left: "50%",
+                transform: `translateX(-50%) scale(${springScale})`,
+                textAlign: "center",
+                fontSize: calculateFontSize(currentText),
+                fontWeight: "bold",
+                padding: "8px 10px",
+                backgroundColor: "white",
+                border: "4px solid black",
+                borderRadius: "20px",
+                display: "inline-block",
+                whiteSpace: "nowrap",
+                width: getTextBasedWidth(),
+                overflow: "hidden",
+              }}
+            >
+              {displayedWords}
+            </div>
+          );
+        })}
+      </AbsoluteFill>
+    );
+  };
+
   return (
-    <AbsoluteFill style={{ backgroundColor: "transparent" }}>
-      {hasText && (
-        <div
-          style={{
-            position: "absolute",
-            bottom: 100,
-            left: "50%",
-            transform: `translateX(-50%) scale(${getSpringScale()})`,
-            textAlign: "center",
-            fontSize: calculateFontSize(getCurrentText()),
-            fontWeight: "bold",
-            padding: "8px 10px",
-            backgroundColor: "white",
-            border: "4px solid black",
-            borderRadius: "20px",
-            display: "inline-block",
-            whiteSpace: "nowrap",
-            width: getTextBasedWidth(),
-            overflow: "hidden",
-          }}
-        >
-          {displayedWords}
-        </div>
-      )}
-    </AbsoluteFill>
+    <TransitionSeries>
+      {Object.keys(captionGroups).map((groupIndexStr, index) => {
+        const groupIndex = parseInt(groupIndexStr);
+        const isLastGroup = index === Object.keys(captionGroups).length - 1;
+        
+        return (
+          <React.Fragment key={groupIndex}>
+            <TransitionSeries.Sequence durationInFrames={
+              isLastGroup 
+                ? Math.max(30, getFrameFromMs(transitionTimings[groupIndex] || 1000))
+                : getFrameFromMs((transitionTimings[groupIndex] || 1000) - (index === 0 ? 0 : transitionTimings[index - 1] || 0))
+            }>
+              {createGroupSequence(groupIndex)}
+            </TransitionSeries.Sequence>
+            {!isLastGroup && (
+              <TransitionSeries.Transition
+                presentation={flip({ direction: "from-bottom" })}
+                timing={linearTiming({ durationInFrames: 15 })}
+              />
+            )}
+          </React.Fragment>
+        );
+      })}
+    </TransitionSeries>
   );
 };

@@ -11,6 +11,8 @@ import { JigsawPageComposition, jigsawPageSchema } from "./JigsawPage/JigsawPage
 import { TiktokCaptionComposition, tiktokCaptionSchema } from "./TiktokCaption";
 import { FingerFamilyTiktokCaptionComposition, fingerFamilyTiktokCaptionSchema } from "./FingerFamily/FingerFamilyTiktokCaptionComposition";
 import { TiktokCaption2Composition, tiktokCaption2Schema } from "./TiktokCaption2";
+import { TenLittleObjectMoveComposition, tenLittleObjectMoveSchema } from "./TenLittleObjectMove/TenLittleObjectMoveComposition";
+import { TenLittleObjectBatchComposition, tenLittleObjectBatchSchema } from "./TenLittleObjectMove/TenLittleObjectBatchComposition";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -41,15 +43,7 @@ export const RemotionRoot: React.FC = () => {
             { objectImage: "cat.png", backgroundImage: "demoBg.png", mysteriousDuration: 2, revealDuration: 2, fingerDuration: 2 }  // Object 10 - pinky
           ],
           bgm: "https://cdn1.suno.ai/31d5ebf2-2686-4ecc-9cd6-458067461c9e.mp3",
-          lyrics: `[Verse 1 – Happy Pumpkin]
-Happy pumpkin, happy pumpkin, where are you?
-Here I am, here I am, smiling bright and true!
-Ha-ha-ha, I'm feeling happy too!
-
-[Verse 2 – Sad Pumpkin]
-Sad pumpkin, sad pumpkin, where are you?
-Here I am, here I am, feeling kind of blue!
-Boo-hoo-hoo, I'm feeling sad, it's true!`
+          lyrics: "",
         }}
       />
 
@@ -207,6 +201,54 @@ Boo-hoo-hoo, I'm feeling sad, it's true!`,
         defaultProps={{
           outputJsonPath: "halloween-finger-family/output.json",
           combineTokensWithinMilliseconds: 1200
+        }}
+      />
+
+      <Composition
+        id="TenLittleObjectMove"
+        component={TenLittleObjectMoveComposition}
+        durationInFrames={60}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={tenLittleObjectMoveSchema}
+        defaultProps={{
+          backgroundImage: "demoBg.png",
+          objectImage: "cat.png",
+          moveSeconds: 2,
+	  direction: "LeftToRight",
+	  height: 600,
+	  y: 500,
+          text: "10",
+          textY: 50,
+          textHeight: 300,
+          textBackgroundColor: "Red",
+          textInSeconds: 0.3,
+          textOutSeconds: 0.3
+        }}
+      />
+
+      <Composition
+        id="TenLittleObjectBatch"
+        component={TenLittleObjectBatchComposition}
+        durationInFrames={600}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={tenLittleObjectBatchSchema}
+        defaultProps={{
+          objects: [
+            { backgroundImage: "demoBg.png", objectImage: "cat.png", moveSeconds: 2, direction: "LeftToRight", height: 600, y: 500, text: "1", textY: 50, textHeight: 300, textBackgroundColor: "Red", textInSeconds: 0.3, textOutSeconds: 0.3 },
+            { backgroundImage: "demoBg.png", objectImage: "cat.png", moveSeconds: 2, direction: "LeftToRight", height: 600, y: 500, text: "2", textY: 50, textHeight: 300, textBackgroundColor: "Red", textInSeconds: 0.3, textOutSeconds: 0.3 },
+            { backgroundImage: "demoBg.png", objectImage: "cat.png", moveSeconds: 2, direction: "LeftToRight", height: 600, y: 500, text: "3", textY: 50, textHeight: 300, textBackgroundColor: "Red", textInSeconds: 0.3, textOutSeconds: 0.3 },
+            { backgroundImage: "demoBg.png", objectImage: "cat.png", moveSeconds: 2, direction: "LeftToRight", height: 600, y: 500, text: "4", textY: 50, textHeight: 300, textBackgroundColor: "Red", textInSeconds: 0.3, textOutSeconds: 0.3 },
+            { backgroundImage: "demoBg.png", objectImage: "cat.png", moveSeconds: 2, direction: "LeftToRight", height: 600, y: 500, text: "5", textY: 50, textHeight: 300, textBackgroundColor: "Red", textInSeconds: 0.3, textOutSeconds: 0.3 },
+            { backgroundImage: "demoBg.png", objectImage: "cat.png", moveSeconds: 2, direction: "LeftToRight", height: 600, y: 500, text: "6", textY: 50, textHeight: 300, textBackgroundColor: "Red", textInSeconds: 0.3, textOutSeconds: 0.3 },
+            { backgroundImage: "demoBg.png", objectImage: "cat.png", moveSeconds: 2, direction: "LeftToRight", height: 600, y: 500, text: "7", textY: 50, textHeight: 300, textBackgroundColor: "Red", textInSeconds: 0.3, textOutSeconds: 0.3 },
+            { backgroundImage: "demoBg.png", objectImage: "cat.png", moveSeconds: 2, direction: "LeftToRight", height: 600, y: 500, text: "8", textY: 50, textHeight: 300, textBackgroundColor: "Red", textInSeconds: 0.3, textOutSeconds: 0.3 },
+            { backgroundImage: "demoBg.png", objectImage: "cat.png", moveSeconds: 2, direction: "LeftToRight", height: 600, y: 500, text: "9", textY: 50, textHeight: 300, textBackgroundColor: "Red", textInSeconds: 0.3, textOutSeconds: 0.3 },
+            { backgroundImage: "demoBg.png", objectImage: "cat.png", moveSeconds: 2, direction: "LeftToRight", height: 600, y: 500, text: "10", textY: 50, textHeight: 300, textBackgroundColor: "Red", textInSeconds: 0.3, textOutSeconds: 0.3 }
+          ]
         }}
       />
 
